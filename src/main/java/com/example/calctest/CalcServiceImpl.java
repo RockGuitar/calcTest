@@ -25,7 +25,11 @@ public class CalcServiceImpl implements CalcService {
     }
 
     public float calcDivide ( int num1, int num2 ) {
-        float division = num1 / num2;
-        return division;
+        if (num2 == 0) {
+            throw new IllegalArgumentException("You cannot divide by zero!");
+        } else {
+            float division = num1 / num2;
+            return division;
+        }
     }
 }
